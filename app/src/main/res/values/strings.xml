@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">PriceWatch</string>
-    <string name="register">Register to begin.</string>
+    <string name="app_name">PriceWatch \</string>
+    <string name="register">Registration</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="submit_btn">Submit</string>
-    <string name="already_user">Already a user?</string>
+    <string name="submit">Submit</string>
+    <string name="already_user">Already a PriceWatch user?</string>
     <string name="sign_in">Sign-in</string>
-    <string name="login_welcome">Welcome to PriceWatch!</string>
+    <string name="login">Login</string>
     <string name="not_user">New to PriceWatch?</string>
     <string name="sign_up">Sign-up</string>
     <string name="search">Search</string>
