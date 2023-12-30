@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PriceWatch \</string>
+    <string name="app_name">PriceWatch /</string>
     <string name="register">Registration</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
