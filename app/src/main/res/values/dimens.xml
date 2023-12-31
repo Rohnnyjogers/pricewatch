@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="size_small">16dp</dimen>
+    <dimen name="size_medium">32dp</dimen>
+    <dimen name="size_large">48dp</dimen>
+    <dimen name="size_xlarge">64dp</dimen>
+    <dimen name="size_xxlarge">80dp</dimen>
+    <dimen name="rad_small">4dp</dimen>
+    <dimen name="rad_medium">8dp</dimen>
+    <dimen name="rad_large">12dp</dimen>
+    <dimen name="button_large">200dp</dimen>
+    <dimen name="stroke">2dp</dimen>
+    <dimen name="title_text">24sp</dimen>
+    <dimen name="body_text">18sp</dimen>
+    <dimen name="info_text">14sp</dimen>
+</resources>

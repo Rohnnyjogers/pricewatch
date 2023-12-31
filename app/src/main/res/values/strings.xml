@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PriceWatch /</string>
+    <string name="app_name">PriceWatch</string>
     <string name="register">Registration</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -10,6 +10,9 @@
     <string name="not_user">New to PriceWatch?</string>
     <string name="sign_up">Sign-up</string>
     <string name="search">Search</string>
+    <string name="search_info">Select a distributor</string>
+    <string name="harvey_norman">Harvey Norman</string>
+    <string name="currys_pcworld">Curry\'s PC World</string>
     <string name="list">Price List</string>
     <string name="no_prices">Currently tracking no prices.</string>
     <string name="my_prices">My Prices:</string>

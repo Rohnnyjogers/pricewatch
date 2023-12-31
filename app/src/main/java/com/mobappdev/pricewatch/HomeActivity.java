@@ -4,49 +4,47 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 
 public class HomeActivity extends AppCompatActivity {
 
-    FirebaseAuth auth = FirebaseAuth.getInstance();
-    FirebaseUser user = auth.getCurrentUser();
+    BottomNavigationView bottomNavigationView;
+    SearchFragment searchFragment = new SearchFragment();
+    PriceListFragment priceListFragment = new PriceListFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        if(user != null){
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-            String uID = user.getUid();
-            String email = user.getEmail();
-            String name = "Johnny";
-            String surname = "Rogers";
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, searchFragment).commit();
 
-            User u = new User(uID, name, surname, email);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("users");
-            dbRef.child(uID).setValue(u)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
+                if(item.getItemId() == R.id.search_fragment){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, searchFragment).commit();
+                    return true;
+                }else if(item.getItemId() == R.id.pricelist_fragment){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, priceListFragment).commit();
+                    return true;
+                }else if(item.getItemId() == R.id.profile_fragment){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+                    return true;
+                }
 
-                            Toast.makeText(HomeActivity.this, "Data added successfully!", Toast.LENGTH_LONG).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-
-                            Toast.makeText(HomeActivity.this, "Failed to add data.", Toast.LENGTH_LONG).show();
-                        }
-                    });
-        }
+                return false;
+            }
+        });
     }
 }
